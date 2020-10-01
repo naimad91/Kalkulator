@@ -1,5 +1,6 @@
 import math
 
+
 print("Witaj w kalkulatorze !!")
 a = int(input("Podaj pierwszą liczbę: "))
 b = int(input("Wybierz rodzaj działani: 1 - dodawanie, 2 - odejmowanie, 3 - mnożenie, 4 - dzielenie, 5 - potęgowanie,\
@@ -11,18 +12,20 @@ elif (b > 6):
     print("Muisz wybrać liczby od 1 do 6!")
 else:
     c = int(input("Podaj drugą liczbę: "))
+    try:
+        if   (b == 1):
+            wynik = a + c
+        elif (b == 2):
+            wynik = a - c
+        elif (b == 3):
+            wynik = a * c
+        elif (b == 4):
+            wynik = a / c
+        elif (b == 5):
+            wynik = a ** c
+        else:
+            print("Dokonałeś złego wyobru!")
 
-    if (b == 1):
-        wynik = a + c
-    elif (b == 2):
-        wynik = a - c
-    elif (b == 3):
-        wynik = a * c
-    elif (b == 4):
-         wynik = a / c
-    elif (b == 5):
-        wynik = a ** c
-    else:
-        print("Dokonałeś złego wyobru!")
-
-    print("Wynik działania to: ", wynik)
+        print("Wynik działania to: ", wynik)
+    except ZeroDivisionError:
+        print("Nie można dzielić przez zero!")
